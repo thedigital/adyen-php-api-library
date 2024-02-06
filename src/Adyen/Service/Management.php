@@ -50,6 +50,11 @@ class Management extends \Adyen\Service
     public $allowedOrigins;
 
     /**
+     * @var StoreAccount
+     */
+    public $storeAccount;
+
+    /**
      * @var TerminalAccount
      */
     public $terminal;
