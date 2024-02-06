@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Adyen\Service;
 
 use Adyen\Service\ResourceModel\Management\AllowedOrigins;
@@ -11,6 +10,7 @@ use Adyen\Service\ResourceModel\Management\MerchantAccount;
 use Adyen\Service\ResourceModel\Management\MerchantClientKey;
 use Adyen\Service\ResourceModel\Management\MerchantWebhooks;
 use Adyen\Service\ResourceModel\Management\StoreAccount;
+use Adyen\Service\ResourceModel\Management\TerminalAccount;
 
 class Management extends \Adyen\Service
 {
@@ -49,6 +49,10 @@ class Management extends \Adyen\Service
      */
     public $allowedOrigins;
 
+    /**
+     * @var TerminalAccount
+     */
+    public $terminal;
 
     /**
      * Management constructor.
@@ -66,5 +70,6 @@ class Management extends \Adyen\Service
         $this->merchantWebhooks = new MerchantWebhooks($this, null);
         $this->companyWebhooks = new CompanyWebhooks($this, null);
         $this->allowedOrigins = new AllowedOrigins($this, null);
+        $this->terminal = new TerminalAccount($this, null);
     }
 }
